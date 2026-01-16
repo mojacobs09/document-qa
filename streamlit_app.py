@@ -15,9 +15,13 @@ openai_api_key = st.text_input("OpenAI API Key", type="password")
 if not openai_api_key:
     st.info("Please add your OpenAI API key to continue.", icon="🗝️")
 else:
+    st.error("Not a valid APY key. Cannot continue.")
 
     # Create an OpenAI client.
     client = OpenAI(api_key=openai_api_key)
+    st.success("API KEY is valid! Client is ready.")
+
+#FIND SOMETHING TO VALIDAT ETHE API KEY 
 
     # Let the user upload a file via `st.file_uploader`.
     uploaded_file = st.file_uploader(
